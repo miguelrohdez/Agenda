@@ -1,0 +1,247 @@
+/*Quitando estilos del navegador */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Estilo personal */
+
+/*Estilo Navegacion */
+body{
+   
+    color: darkgrey;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+#logo{
+	width: 8em;
+}
+
+.container-menu{
+    width: 95%;
+    margin: auto;
+}
+
+.nav-main{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    height: 80px;
+}
+
+.nav-main ul.nav-menu{
+    display: flex;
+    flex: 1;
+    margin-left: 65px;
+}
+
+.nav-main ul.nav-menu li{
+    padding: 15px;
+}
+
+.nav-main ul.nav-menu li a:hover{
+    border-bottom: 2px solid rgb(90, 5, 5);
+}
+
+.logoNav{
+    width: 6em;
+    padding: 0px 10px 0px 10px ;
+}
+
+.nav-sesion{
+    color: red;
+	padding: 2px;
+	margin: 3px;
+	display: flex;
+    align-items: center;
+}
+.nav-sesion a{
+	padding: 0px 10px 0px 10px;
+}
+/*Seccion de contenido*/
+.container {
+	background-color: #d4d0d0;
+}
+
+/*carrito*/
+.pedidoActual {
+	background-color: #202020;
+	padding: 2% 2%;
+	margin: 1%;
+	font-size: 20px;
+	text-align: justify;
+
+}
+ /*pedido*/
+.confirmaPedido {
+	background-color: #202020;
+	padding: 1% 5%;
+	margin: 1%;
+	font-size: 20px;
+	text-align:end;
+}
+
+.menuH {
+	padding: 1% 5%;
+	margin: 1%;
+	font-size: 20px;
+	text-align:justify;
+}
+.confirmaPedido2 {
+	background-color: #202020;
+	padding: 2% 5%;
+	margin: 2%;
+	font-size: 25px;
+	text-align:center;
+}
+
+.espacio5{
+	height: 400px ;
+	width: 5%;
+	float: left;
+	background-color: #F6EAEA; 
+}
+
+.lateralIzq {
+	height: 500px ;
+	width: 20%;
+	float: left;
+	background-color: #F0DD5B; 
+}
+
+.mapa-contenedor  {
+	height: 500px ;
+	width: 70%;
+	margin: 0px 10px;
+	background-color: #95A9E1;
+	float: left;
+}
+
+.clear {
+	height: 5px;
+	width: 100%;
+	background-color: #070707; 
+	clear: both;
+
+}
+.tituloPrincipal {
+	text-align: center;
+	text-decoration-style: solid;
+	color: blue;
+	
+}
+
+.texto-centrado {
+	text-align: center;	
+}
+
+.text-label{
+	font-weight: bold;
+}
+
+/* Estilo Formulario*/
+.container-formulario{
+	width: 80%;
+	align-items: center;
+	margin: auto;
+	font-size: 1.2em;
+}
+
+.titulo-form{
+	font-size: 1.21em;
+	font-weight: bold;
+	text-shadow:1px 1px gray ;
+}
+
+.text-footer{
+	text-align: center;
+	font-size: 1.2em;
+}
+.t_login{
+	margin: auto;
+	margin-top: 10px;
+	color: black;
+}
+.t_registro{
+	margin: auto;
+	margin-top: 8px;
+	color: black;
+	border-spacing: 15px;
+    border-collapse: separate;
+}
+
+.t_registro #btn_ingresar{
+	text-align: center;
+}
+
+.btn_registro{
+	padding-top: 3%;
+	text-align: center;
+}
+
+
+#img_index{
+	width: 45%;
+	margin-top: 3%;
+}
+
+h2 {
+	color: black;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.txt_adventencia{
+	text-align: center;
+	text-decoration-style: solid;
+	color: rgb(190, 3, 3);
+}
+
+
+
+table.calendario {
+	table-layout: fixed;
+	width: 97%;
+	border-collapse: collapse;
+	border: 3px solid rgb(0, 0, 0);
+	margin: auto;
+  }
+  
+th.calendario {
+border: 3px solid rgb(0, 0, 0);
+background-color: blue;
+color: white;
+}
+  
+td.calendario {
+	border: 1px solid rgb(133, 124, 124);
+	background-color: rgb(201, 206, 181);
+	color: rgb(0, 0, 0);
+	vertical-align: top;
+	text-align: center;
+}
+
+.day{
+	color: red;
+	vertical-align: top;
+	text-align: left;
+}
+
+ul.cita{
+	border: 1px dotted;
+	margin: 0;
+	padding: 0%;
+}
+li.cita{
+	display: inline-flexbox;
+}
