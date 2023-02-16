@@ -26,53 +26,64 @@
 			$hora_termino = $_POST['txt_hora_fin'];
 			$participantes = $_POST['txt_participantes'];
 			$contrasenia  = generarContrasenia();
-            echo "<table class='t_registro'>
-								<tr>
-									<td>Area que reserva </td><td>".$area."</td>
-								</tr>
-								<tr>
-									<td>Quien reserva </td><td>".$colaborador."</td>
-								</tr>
-								<tr>
-									<td>Asunto </td><td>".$asunto."</td>
-								</tr>
-								<tr>
-									<td>Sala </td><td>".$sala."</td>
-								</tr>
-								<tr>
-									<td>Fecha </td><td>".$fecha."</td>
-								</tr>
-								<tr>
-									<td>Hora incio </td><td>".$hora_inicio."</td>
-								</tr>
-								<tr>
-									<td>Hora termino </td><td>".$hora_termino."</td>
-								</tr>
-                                <tr>
-									<td>No de participantes </td><td>".$participantes."</td>
-								</tr>
-                                <tr>
-									<td>Contraseña </td><td>".$contrasenia."</td>
-								</tr>
-							</table>
-							";
-            $conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
-            if ($conexion -> connect_errno) {
-                echo "Fallo la conexion ".$conexion -> connect_errno;
-            }else{
-                $conexion -> set_charset("utf8");
-                $consulta = "call SP_AltaReservacion(?,?,?,?,?,?,?,?,?)";
-                $stmt = $conexion->prepare($consulta);
-                $stmt->bind_param("sssssssss",$area,$colaborador,$asunto,$sala,$fecha,$hora_inicio,$hora_termino,$participantes,$contrasenia);
-                $stmt->execute();	
-                if ($stmt->affected_rows>0) {
-					echo "<h2 class='txt_adventencia'>Se ha registrado correctamente</h2>
-					<p>Guarde bien la contraseña antes de cerrar la ventana, ya que se requiere para modificar o cancelar la cita</p>"; //ir a pagina
-                }else{
-					echo "Hubo error";
-                }
-				$stmt->free_result();	
-				$conexion -> close();
+			if ((strlen($area) || strlen($fecha) || strlen($hora_inicio)) == 0 ) {
+				echo "
+				<table class='t_registro'>
+				<tr>
+				<td id='txt_advertencia' colspan='2'> <h2 class='txt_adventencia'>No puede haber campos vacios </h2></td>
+				</tr>
+				<tr>
+				<td class='btn_registro'><a href='./agendar.php'><button>Regresar</button></a></td>
+				</tr>
+				</table>";
+			}else{
+				echo "<table class='t_registro'>
+									<tr>
+										<td>Area que reserva </td><td>".$area."</td>
+									</tr>
+									<tr>
+										<td>Quien reserva </td><td>".$colaborador."</td>
+									</tr>
+									<tr>
+										<td>Asunto </td><td>".$asunto."</td>
+									</tr>
+									<tr>
+										<td>Sala </td><td>".$sala."</td>
+									</tr>
+									<tr>
+										<td>Fecha </td><td>".$fecha."</td>
+									</tr>
+									<tr>
+										<td>Hora incio </td><td>".$hora_inicio."</td>
+									</tr>
+									<tr>
+										<td>Hora termino </td><td>".$hora_termino."</td>
+									</tr>
+									<tr>
+										<td>No de participantes </td><td>".$participantes."</td>
+									</tr>
+									<tr>
+										<td>Contraseña </td><td>".$contrasenia."</td>
+									</tr>
+								</table>";						
+				$conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
+				if ($conexion -> connect_errno) {
+					echo "Fallo la conexion ".$conexion -> connect_errno;
+				}else{
+					$conexion -> set_charset("utf8");
+					$consulta = "call SP_AltaReservacion(?,?,?,?,?,?,?,?,?)";
+					$stmt = $conexion->prepare($consulta);
+					$stmt->bind_param("sssssssss",$area,$colaborador,$asunto,$sala,$fecha,$hora_inicio,$hora_termino,$participantes,$contrasenia);
+					$stmt->execute();	
+					if ($stmt->affected_rows>0) {
+						echo "<h2 class='txt_adventencia'>Se ha registrado correctamente</h2>
+						<h2>Guarde bien la contraseña antes de cerrar la ventana, ya que se requiere para modificar o cancelar la cita</h2><br>"; //ir a pagina
+					}else{
+						echo "<h2 class='txt_adventencia'>Hubo un error al registrarlo</h2>";
+					}
+					$stmt->free_result();	
+					$conexion -> close();
+				}
 			}
 		?>
         </div>

@@ -5,31 +5,38 @@
     <title>Login</title>
 </head>
 <body>
-    <?php 
-        require("datos_con.php");
-        $usuario =   $_POST["txt_email"];
-        $password = $_POST["txt_contra"];
-        $conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data);
+    <?php
+        require("./datos_con.php");
+        $id_user = $_POST["txt_nocita"];
+        $contra_user = $_POST["txt_contra"];
+        $conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
+        $conexion -> set_charset("utf8");
         if ($conexion -> connect_errno) {
             echo "Fallo la conexion ".$conexion -> connect_errno;
         }else{
-            $conexion -> set_charset("utf8");
-            $consulta = "SELECT * FROM cliente WHERE cliente_correo = '$usuario' AND cliente_contrasenia = '$conexion'";
-            $resultado = $conexion -> query($consulta);
-            $registros = $conexion -> affected_rows;
-            echo $conexion -> fied_count;
-            if ($registros > 0) {
-                echo "Es valido";
+            $consulta = "SELECT nocita, estado_reserva FROM agenda WHERE nocita = ?";
+            $stmt = $conexion->prepare($consulta);
+            $stmt->bind_param("s", $id_user);
+            $stmt->execute();
+            $stmt->bind_result($idCita, $contra_bd);
+            $stmt->fetch();
+            echo "Recibe: ".$contra_user;
+            echo "<br>Obtiene: ".$contra_bd;
+            echo strcmp($contra_user, $contra_bd);
+            if (!strcmp($contra_user, $contra_bd)) {
                 session_start();
-                $_SESSION["usuario"]=$_POST["txt_email"];
-                header("location:menu.html");
+                $_SESSION['id_cita'] = $idCita;
+                header("Location: ../mostrar_consulta.php");
+                
             }else{
-                echo "Incorrecto";
-                header("location:../login.html"); //Posiblemente agrege una loginErro.html con el mensaje de error
+                header("Location: ../aviso_contra_incorrecta.php");
             }
             $conexion -> close();
         }            
+	?>
     
-    ?>
 </body>
+<footer>
+    <h1 class="text-footer"> Derechos reservados Labotec México, S.C.</h1>
+</footer>
 </html>

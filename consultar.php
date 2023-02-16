@@ -4,56 +4,31 @@
 		<meta charset="utf-8">
         <title>Agenda de salas Labotec</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-		
-		
 	</head>
 	<body>
-	
+	<?php include("nav_bar.html");	?>
 	<div class="container">
 		<header>
 			<h1 class="tituloPrincipal">Perfil</h1>
 		</header>	
 		<!-- Aqui  empieza la seccion del formulario o datos a mostrar -->
 		<div class="caja principal">
-			echo "<h2>Ver tu cita</h2>";
-			<?php
-				if (isset($_POST["btn_entrar"]) or !session_start() ) {
-					$_SESSION['error_login'] = FALSE;
-					require("./php/datos_con.php");
-					$usuario =   $_POST["txt_email"];
-					$password = $_POST["txt_contra"];
-					$conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
-					if ($conexion -> connect_errno) {
-						echo "Fallo la conexion ".$conexion -> connect_errno;
-					}else{
-						$conexion -> set_charset("utf8");
-						$consulta = "SELECT  NoCliente, cliente_nombre FROM cliente WHERE cliente_correo = ? AND cliente_contrasenia = ?";
-						//$consulta ="SELECT  NoCliente, cliente_nombre, cliente_contrasenia FROM cliente WHERE cliente_correo = ?";
-						$stmt = $conexion->prepare($consulta);
-						$stmt->bind_param("ss", $usuario, $password);
-						//$stmt->bind_param("s", $usuario);
-						$stmt->execute();	
-						$stmt->bind_result($idUsuario, $nombre_cliente);
-						//$stmt->bind_result($idUsuario, $nombre_cliente, $contra_enc);
-						/*if (password_verify($password,$contra_enc)) {
-							echo "Correcto";
-						}else{
-							echo "INNCorrecto";
-						}*/
-						if ($stmt->fetch() ) {
-							session_start();
-							$_SESSION["usuario"]=$nombre_cliente;
-							$_SESSION["id"]=$idUsuario;
-							//header("location:carrito.php"); NO SE A QUE PAGINA MARDAR AL CLIENTE REGISTRADO
-							
-						}
-						$conexion -> close();
-					}            
-				} 
-			?>
-			
-			
+			<h2>Ver tu cita</h2>;
+			<form action="./php/verifica_datos.php" method="POST">
+				<table class="t_registro">
+					<tr>
+						<td>ID Cita: </td>
+						<td><input type="text" name="txt_nocita"></td>
+					</tr>
+					<tr>
+						<td>Contraseña: </td>
+						<td><input type="password" name="txt_contra"></td>
+					</tr>
+					<tr>
+						<td id="btn_ingresar" colspan="2"><input  type="submit" name="btn_entrar" value="Consultar"></td>
+					</tr>
+				</table>
+   			</form>
 		</div>
 		
 		
