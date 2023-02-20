@@ -62,7 +62,7 @@
 									<td>No de participantes </td><td>".$no_personas."</td>
                                     </tr>
                                     <tr>
-									<td class='btn_registro'><a href='./actualizar.php'><button>Modificar Cita</button></a></td>
+									<td class='btn_registro'><a href='./modificar.php'><button>Modificar Cita</button></a></td>
 									<td class='btn_registro'><a href='advertencia_eliminar.php'><button>Eliminarla</button></a></td>
                                     </tr>
                                     </table>";

@@ -17,6 +17,7 @@
                                                 <option value="Atencion a clientes">
                                                 <option value="Calidad">
                                                 <option value="Finanzas">
+                                                <option value="Recursos Humanos">
                                                 <option value="Seguridad e Higiene">
                                                 <option value="TI">
                                                 <option value="UEL">

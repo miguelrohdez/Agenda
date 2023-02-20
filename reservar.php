@@ -70,6 +70,22 @@
 				if ($conexion -> connect_errno) {
 					echo "Fallo la conexion ".$conexion -> connect_errno;
 				}else{
+					/*
+					$conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
+                	$conexion -> set_charset("utf8");
+					$consulta = "SELECT * FROM disponibilidad WHERE fecha = '$fecha' AND hora_inicio <= '$hora' AND hora_fin > '$hora'";
+					$consulta = "SELECT nocita, area_reserva, colaborador_reserva, asunto_reserva, sala_reserva, fecha_reserva, hora_inicio, hora_termino, participantes_reserva FROM agenda WHERE nocita = ?";
+                   	$stmt = $conexion->prepare($consulta);
+                  	$stmt->bind_param("s", $_SESSION['id_cita']);
+                   	$stmt->execute();
+                   	$stmt->bind_result($nocita, $area,$colaborador,$asunto,$sala,$fecha,$hora_inicio,$hora_termino,$no_personas);
+                   	$stmt->fetch();
+					if ($stmt->fetch() > 0) {
+						echo "<h2 class='txt_adventencia'>No se encuentra disponible esa fecha</h2>";
+					}else{
+
+					} libre
+					*/
 					$conexion -> set_charset("utf8");
 					$consulta = "call SP_AltaReservacion(?,?,?,?,?,?,?,?,?)";
 					$stmt = $conexion->prepare($consulta);
