@@ -16,7 +16,7 @@ CREATE PROCEDURE SP_AltaReservacion (
 --call SP_AltaReservacion('Atencion a clientes','Migu','asdd','Tesla','2023-02-13','13:59','15:01',5,'ACTIVO')
 
 CREATE PROCEDURE SP_ModificarReservacion(
-	IN sp_nocita INT(11)
+	IN sp_nocita INT(11),
 	IN sp_area VARCHAR(80),
 	IN sp_colaborador VARCHAR(150),
 	IN sp_asunto VARCHAR(255),
@@ -24,8 +24,7 @@ CREATE PROCEDURE SP_ModificarReservacion(
 	IN sp_fecha DATE,
     IN sp_hora_inicio TIME,
 	IN sp_hora_termino TIME,
-    IN sp_participantes INT,
-	IN sp_estado VARCHAR(15))
+    IN sp_participantes INT)
 update agenda
 	set
 		area_reserva = sp_area,
@@ -35,7 +34,7 @@ update agenda
 		fecha_reserva = sp_fecha,
 		hora_inicio = sp_hora_inicio,
 		hora_termino = sp_hora_termino,
-		participantes_reserva = sp_participantes,
+		participantes_reserva = sp_participantes
 	where nocita = sp_nocita
 ;
 

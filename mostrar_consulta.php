@@ -37,35 +37,35 @@
                    $stmt->fetch();
                }
                echo "<table class='t_registro'>
-               <tr>
-               <td>ID de Cita </td><td>".$nocita."</td>
-               </tr>
-               <tr>
-               <td>Area que reserva </td><td>".$area."</td>
-               </tr>
-               <tr>
-               <td>Quien reserva </td><td>".$colaborador."</td>
-               </tr>
-               <tr>
-               <td>Asunto </td><td>".$asunto."</td>
-               </tr>
-								<tr>
-									<td>Sala </td><td>".$sala."</td>
-                                    </tr>
-                                    <tr>
-									<td>Fecha </td><td>".$fecha."</td>
-                                    </tr>
-                                    <tr>
-									<td>Horario</td><td>".$hora_inicio."<span> - </span>".$hora_termino."</td>
-                                    </tr>
-                                    <tr>
-									<td>No de participantes </td><td>".$no_personas."</td>
-                                    </tr>
-                                    <tr>
-									<td class='btn_registro'><a href='./modificar.php'><button>Modificar Cita</button></a></td>
-									<td class='btn_registro'><a href='advertencia_eliminar.php'><button>Eliminarla</button></a></td>
-                                    </tr>
-                                    </table>";
+                        <tr>
+                            <td>ID de Cita </td><td>".$nocita."</td>
+                        </tr>
+                        <tr>
+                            <td>Area que reserva </td><td>".$area."</td>
+                        </tr>
+                        <tr>
+                            <td>Quien reserva </td><td>".$colaborador."</td>
+                        </tr>
+                        <tr>
+                            <td>Asunto </td><td>".$asunto."</td>
+                        </tr>
+                        <tr>
+                            <td>Sala </td><td>".$sala."</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha </td><td>".$fecha."</td>
+                        </tr>
+                        <tr>
+                            <td>Horario</td><td>".$hora_inicio."<span> - </span>".$hora_termino."</td>
+                        </tr>
+                        <tr>
+                            <td>No de participantes </td><td>".$no_personas."</td>
+                        </tr>
+                        <tr>
+                        <td class='btn_registro'><a href='./modificar.php'><button>Modificar Cita</button></a></td>
+                        <td class='btn_registro'><a href='advertencia_eliminar.php'><button>Eliminarla</button></a></td>
+                        </tr>
+                    </table>";
                                     
             ?>
         </div>

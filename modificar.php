@@ -18,9 +18,8 @@
             $stmt = $conexion->prepare($consulta);
             $stmt->bind_param("s", $idCita);
             $stmt->execute();
-            //$stmt->bind_result($area,$colaborador,$asunto,$sala,$fecha,$hora_i,$hora_t,$participantes);
-            $consulta = stmt->fetch();
-            echo $consulta;
+            $stmt->bind_result($area,$colaborador,$asunto,$sala,$fecha,$hora_i,$hora_t,$participantes);
+            $consulta = $stmt->fetch();
     ?>
     <div class="container">
 		<header>
@@ -29,10 +28,10 @@
 		<!-- Aqui  empieza la seccion del formulario o datos a mostrar -->
 		<div class="caja principal">
             
-            <form action="actualizar.php" method="POST">
+            <form action="./php/actualizar.php" method="POST">
             <table class="t_registro">
                 <tr>
-                    <td>Area que reserva </td><td><input list="areas" name="txt_area" value= <?php echo $area;?>>
+                    <td>Area que reserva </td><td><input list="areas" name="txt_area" value= '<?php echo $area;?>'>
                                                 <datalist id="areas">
                                                     <option value="Atencion a clientes">
                                                     <option value="Calidad">
@@ -48,13 +47,13 @@
                                                 </td>
                 </tr>
                 <tr>
-                    <td>Quien reserva </td><td><input type="text" name="txt_colaborador" value=<?php echo $colaborador;?>></td>
+                    <td>Quien reserva </td><td><input type="text" name="txt_colaborador" value='<?php echo $colaborador;?>'></td>
                 </tr>
                 <tr>
-                    <td>Asunto </td><td><input type="text" name="txt_asunto" value=<?php echo $asunto;?>></td>
+                    <td>Asunto </td><td><input type="text" name="txt_asunto" value='<?php echo $asunto;?>'></td>
                 </tr>
                 <tr>
-                    <td>Sala </td><td><input list="salas" name="txt_sala" value=<?php echo $sala;?>>
+                    <td>Sala </td><td><input list="salas" name="txt_sala" value='<?php echo $sala;?>'>
                                                 <datalist id="salas">
                                                     <option value="Tesla">
                                                     <option value="Volta">
@@ -63,19 +62,18 @@
                                                 </td>
                 </tr>
                 <tr>
-                    <td>Fecha </td><td><input type="date" name="txt_fecha" value=<?php echo $fecha;?>></td>
+                    <td>Fecha </td><td><input type="date" name="txt_fecha" value='<?php echo $fecha;?>'></td>
                 </tr>
                 <tr>
-                    <td>Hora incio </td><td><input type="time" name="txt_hora_ini" value=<?php echo $hora_i;?>></td>
+                    <td>Hora incio </td><td><input type="time" name="txt_hora_ini" value='<?php echo $hora_i;?>'></td>
                 </tr>
                 <tr>
-                    <td>Hora termino </td><td><input type="time" name="txt_hora_fin" value=<?php echo $hora_t;?>></td>
+                    <td>Hora termino </td><td><input type="time" name="txt_hora_fin" value='<?php echo $hora_t;?>'></td>
                 </tr>
                 <tr>
-                    <td>No de participantes </td><td><input type="number" name="txt_participantes" value=<?php echo $participantes;?>></td>
+                    <td>No de participantes </td><td><input type="number" name="txt_participantes" value='<?php echo $participantes;?>'></td>
                 </tr>
                 <tr>
-                    <input type="hidden" type="text" name="id" value=<?php echo $idCita;?>>
                     <td class="btn_registro"><input  type="submit" name="btn_actualizar" value="Actualizar"></td>
                 </tr>
             </table>
