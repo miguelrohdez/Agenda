@@ -143,7 +143,5 @@
         </tbody>
     </table>
 </body>
-<footer>
-    <h1 class="text-footer"> Derechos reservados Labotec México, S.C.</h1>
-</footer>
+<?php include("./footer.html");	?>
 </html>

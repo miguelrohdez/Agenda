@@ -30,12 +30,8 @@
 				</table>
    			</form>
 		</div>
-		
-		
 		<div class="clear"></div>
 		</div>
-		<footer>
-            <h1 class="text-footer"> Derechos reservados Labotec México, S.C.</h1>
-        </footer>
+		<?php include("./footer.html");	?>
 	</body>
 </html>

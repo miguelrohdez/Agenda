@@ -78,8 +78,6 @@
 </div>
 		<div class="clear"></div>
 	</div>
-		<footer>
-			<h1 class="text-footer"> Ⓒ 2021 Lalo's Burger ALGUNOS PRODUCTOS ESTAN SUJETOS A DISPONIBILIDAD</h1>
-		</footer>
+    <?php include("../footer.html");	?>
 	</body>
 </html>

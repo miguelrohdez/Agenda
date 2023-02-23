@@ -105,8 +105,6 @@
         </div>
 		<div class="clear"></div>
 	</div>
+	<?php include("./footer.html");	?>
 </body>
-<footer>
-    <h1 class="text-footer"> Derechos reservados Labotec México, S.C.</h1>
-</footer>
 </html>
