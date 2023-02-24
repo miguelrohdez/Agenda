@@ -39,6 +39,8 @@ update agenda
 ;
 
 CREATE PROCEDURE SP_BorrarReservacion(
-	in sp_nocita INT(11)
-    delete from agenda where nocita = sp_nocita
+	in sp_nocita INT(11))
+delete 
+	from agenda 
+	where nocita = sp_nocita
 ;

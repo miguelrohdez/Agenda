@@ -2,14 +2,14 @@
 <html>
 <head><meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/main.css">
-		<title>Datos actualizados</title>
+		<title>Actualización de datos</title>
 </head>
 <body>
     
-    <?php include("../nav_bar.html");?>
+    <?php include("./nav_bar.html");?>
     <div class="container">
 		<header>
-            <h1 class="tituloPrincipal">Datos actualizados!</h1>
+            <h1 class="tituloPrincipal">Actualización de datos!</h1>
 		</header>	
 		<!-- Aqui  empieza la seccion del formulario o datos a mostrar -->
 		<div class="caja principal">
@@ -66,8 +66,8 @@
                 $stmt->bind_param("sssssssss",$idCliente,$area,$colaborador,$asunto,$sala,$fecha,$hora_inicio,$hora_termino,$participantes);
                 $stmt->execute();	
                 if ($stmt->affected_rows>0) {
-                    echo "<h2 class='txt_adventencia'>Se ha modificado correctamente</h2>
-                    <a href='../index.php'><button>Regresar</button></a>"; //ir a pagina
+                    echo "<h2 class='txt_adventencia'>Se ha modificado correctamente
+                    <a href='../index.php'><button>Regresar</button></a></h2>"; //ir a pagina
                 }else{
                     echo "<h2 class='txt_adventencia'>Hubo un error al registrarlo</h2>";
                 }

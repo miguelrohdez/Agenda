@@ -63,7 +63,7 @@
 										<td>No de participantes </td><td>".$participantes."</td>
 									</tr>
 									<tr>
-										<td>Contraseña </td><td>Sin modificaciones</td>
+										<td>Contraseña </td><td>".$contrasenia."</td>
 									</tr>
 								</table>";						
 				$conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
