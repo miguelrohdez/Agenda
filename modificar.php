@@ -27,7 +27,6 @@
 		</header>	
 		<!-- Aqui  empieza la seccion del formulario o datos a mostrar -->
 		<div class="caja principal">
-            
             <form action="./php/actualizar.php" method="POST">
             <table class="t_registro">
                 <tr>

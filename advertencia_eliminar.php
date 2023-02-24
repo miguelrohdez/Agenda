@@ -9,7 +9,7 @@
 		<!-- Aqui  empieza la barra de menus y logo -->
 		<?php 
 				session_start();
-				include("nav_bar.html");
+				include("./nav_bar.html");
 		?>
 	<!-- Aqui  empieza la caja principal -->
 	<div class="container">
@@ -21,7 +21,7 @@
 		
 					<table class="t_registro">
 					<tr>
-					<td id="txt_advertencia" colspan="2"> ¿Desea eliminar el perfil? </td>
+					<td id="txt_advertencia" colspan="2"> ¿Esta seguro de eliminar la cita? </td>
 					</tr>
 					<tr>
 						<td class='btn_registro'><a href='./php/eliminar.php'><button>Aceptar</button></a></td>
@@ -29,8 +29,6 @@
 					</tr>
 				</table>";
 		</div>
-		
-		
 		<div class="clear"></div>
 		</div>
         <?php include("./footer.html");	?>

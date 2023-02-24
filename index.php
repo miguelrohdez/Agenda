@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-Es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-   
-   
     <title>Agenda de salas Labotec</title>
 </head>
 <body>
         <?php include("nav_bar.html");	?>
-    
-
         <header>
 			<h1 class="tituloPrincipal">Agenda</h1>
 		</header>
-        
         <?php require("./php/mesEspaniol.php");
             $nombreMes = traducirNombre($month = date("F"));
             echo "<h2>$nombreMes</h2>";
         ?>
-
   <table class="calendario">
     <thead>
         <tr>
@@ -46,7 +40,6 @@
                 $conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
                 $conexion -> set_charset("utf8");
                 $consulta = "SELECT nocita, area_reserva, colaborador_reserva, asunto_reserva, sala_reserva, hora_inicio, hora_termino FROM agenda WHERE fecha_reserva = ?";
-        
                 for ($i = 0; $i < $weeks; $i++) {
                     echo "<tr>";
                     for ($j = 1; $j <= 7; $j++) {
@@ -55,7 +48,6 @@
                         $current_date = "$year-$month-$current_day";
                         echo "<td class='calendario'>";
                         echo "<div class='day'>$current_day</div>";
-
                         $stmt = $conexion->prepare($consulta);
                         $stmt->bind_param("s", $current_date);
                         $stmt->execute();
@@ -80,7 +72,6 @@
         ?>
         </tbody>
     </table>
-
     <?php 
         $nombreMes = traducirNombre(date('F', strtotime('+1 month')));
         echo "<h2>$nombreMes</h2>";
@@ -108,7 +99,6 @@
                 $conexion = new mysqli($db_host, $db_admin,$db_pass,$db_data,$db_port);
                 $conexion -> set_charset("utf8");
                 $consulta = "SELECT area_reserva, colaborador_reserva, asunto_reserva, sala_reserva, hora_inicio, hora_termino FROM agenda WHERE fecha_reserva = ?";
-        
                 for ($i = 0; $i < $weeks; $i++) {
                     echo "<tr>";
                     for ($j = 1; $j <= 7; $j++) {
@@ -117,7 +107,6 @@
                         $current_date = "$year-$month-$current_day";
                         echo "<td class='calendario'>";
                         echo "<div class='day'>$current_day</div>";
-
                         $stmt = $conexion->prepare($consulta);
                         $stmt->bind_param("s", $current_date);
                         $stmt->execute();
@@ -142,6 +131,6 @@
         ?>
         </tbody>
     </table>
+    <?php include("./footer.html");	?>
 </body>
-<?php include("./footer.html");	?>
 </html>

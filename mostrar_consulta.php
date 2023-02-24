@@ -2,24 +2,19 @@
 <html lang="es-ES">
 	<head>
 		<meta charset="utf-8">
-		<title>Lalo's Burgers</title>
+		<title>Agenda de salas Labotec</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
 	<!-- Parte que verifica el login -->
-		
-		<?php
-				include("./nav_bar.html");
-		?>
-	
+		<?php include("./nav_bar.html"); ?>
 	<!-- Aqui  empieza la caja principal -->
 	<div class="container">
 		<header>
-			<h1 class="tituloPrincipal">Perfil</h1>
+			<h1 class="tituloPrincipal">Cita</h1>
 		</header>	
 		<!-- Aqui  empieza la seccion del formulario o datos a mostrar -->
 		<div class="caja principal">
-				
 			<?php 
                session_start();
                echo $_SESSION['id_cita'];
@@ -66,14 +61,10 @@
                         <td class='btn_registro'><a href='advertencia_eliminar.php'><button>Eliminarla</button></a></td>
                         </tr>
                     </table>";
-                                    
             ?>
         </div>
-                                
-                                
 		<div class="clear"></div>
 		</div>
         <?php include("./footer.html");	?>
 	</body>
-    
 </html>

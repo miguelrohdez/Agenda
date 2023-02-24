@@ -16,7 +16,6 @@
 		<?php 
 			require("./php/datos_con.php");
 			require("./php/generar_pass.php");
-           
 			$area = $_POST['txt_area'];
 			$colaborador = $_POST['txt_colaborador'];
 			$asunto = $_POST['txt_asunto'];

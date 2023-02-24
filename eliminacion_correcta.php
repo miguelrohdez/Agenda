@@ -2,7 +2,8 @@
 <html lang="es-ES">
 	<head>
 		<meta charset="utf-8">
-		<title>Lalo's Burgers</title>
+		<title>                
+</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>

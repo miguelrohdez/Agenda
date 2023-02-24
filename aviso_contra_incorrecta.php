@@ -2,14 +2,12 @@
 <html lang="es-ES">
 	<head>
 		<meta charset="utf-8">
-		<title>Lalo's Burgers</title>
+		<title>Agenda de salas Labotec</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
 		<!-- Aqui  empieza la barra de menus y logo -->
-		<?php
-				include("./nav_bar.html");
-		?>
+		<?php include("nav_bar.html");	?>
 	<!-- Aqui  empieza la caja principal -->
 	<div class="container">
 		<header>
@@ -28,8 +26,6 @@
 					</tr>
 				</table>";
 		</div>
-		
-		
 		<div class="clear"></div>
 		</div>
 		<?php include("./footer.html");	?>
